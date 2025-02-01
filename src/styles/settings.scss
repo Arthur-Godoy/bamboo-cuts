@@ -9,5 +9,25 @@
 //   $color-pack: false
 // );
 
-@use 'vuetify/settings';
 
+@forward "vuetify/settings" with (
+    $border-radius-root: 16px,
+    $field-control-solo-background: rgb(var(--v-theme-background))
+);
+
+html { overflow: auto }
+::-webkit-scrollbar {
+    width: 10px;
+    background: rgb(var(--v-theme-background));
+  }
+
+/* scroolbar */
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--v-theme-surface-dark));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--v-theme-surface-dark));
+  }

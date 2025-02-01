@@ -31,6 +31,7 @@ export default [
                 },
             ],
             "vue/multi-word-component-names": "off",
+            "vue/max-attributes-per-line": 3,
             "vue/html-indent": ["error", 4],
             //4 space
             indent: [

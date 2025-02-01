@@ -6,9 +6,12 @@ import AppBar from '@/components/AppBar/AppBar.vue';
 <template>
     <v-layout v-if="!$route.meta.noLayout">
         <AppBar />
-
-        <slot />
+        <div class="w-100">
+            <slot />
+        </div>
     </v-layout>
 
-    <slot v-else />
+    <div v-else>
+        <slot />
+    </div>
 </template>

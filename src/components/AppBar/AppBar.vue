@@ -28,7 +28,8 @@ import { useTheme } from 'vuetify';
 const theme = useTheme();
 
 function toggleTheme() {
-    theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark';
+    theme.global.name.value = theme.global.current.value.dark ? 'lightTheme' : 'darkTheme';
+    localStorage.setItem('theme', theme.global.name.value);
 }
 
 </script>

@@ -9,7 +9,6 @@ const routes: Route[] = [
             noLayout: true,
         }
     },
-
     {
         path: "/",
         name: "Home",
@@ -17,7 +16,16 @@ const routes: Route[] = [
         meta: {
             requiresAuth: true,
         }
-    }
+    },
+    {
+        path: "/login",
+        name: "Login",
+        component: () => import("@/pages/Login.vue"),
+        meta: {
+            noLayout: true,
+        }
+    },
+
 ]
 
 export default routes;
