@@ -7,6 +7,7 @@ export type VideoFilters = {
     title?: string,
     status?: string,
     folder_id?: string,
+    limit?: number
 }
 
 export default {
@@ -16,5 +17,15 @@ export default {
         const params = new URLSearchParams(filters as any);
 
         return useHttp().get(`/videos?${params.toString()}`);
+    },
+
+    showVideo(videoId: string): Promise<AxiosResponse>
+    {
+        return useHttp().get(`/videos/${videoId}`);
+    },
+
+    editDescription(videoId: string, data: {title: string, description: string | undefined}): Promise<AxiosResponse>
+    {
+        return useHttp().put(`/videos/${videoId}`, data);
     }
 }

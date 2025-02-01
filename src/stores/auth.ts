@@ -7,7 +7,7 @@ export interface AuthStore {
     isAuthenticated: () => boolean;
 }
 
-const useAuthStore = defineStore("app", () => {
+const useAuthStore = defineStore("auth", () => {
     function authenticate(token: string): void
     {
         localStorage.setItem("token", token);

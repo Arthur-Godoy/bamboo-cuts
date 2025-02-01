@@ -25,6 +25,14 @@ const routes: Route[] = [
             noLayout: true,
         }
     },
+    {
+        path: "/assistir/:id",
+        name: "Assistir",
+        component: () => import("@/pages/Assistir.vue"),
+        meta: {
+            requiresAuth: true,
+        }
+    }
 
 ]
 

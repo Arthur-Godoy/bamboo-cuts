@@ -1,7 +1,7 @@
 <template>
     <v-app-bar>
         <div class="d-flex align-center justify-space-between w-100 px-5">
-            <div class="d-flex align-center">
+            <div class="d-flex align-center cursor-pointer" @click="$router.push('/')">
                 <v-img
                     src="@/assets/logo.png"
                     min-width="70"

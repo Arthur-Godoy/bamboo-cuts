@@ -12,4 +12,7 @@ export type Video = {
     video_player: string;
     preview: string;
     thumbnail: string;
+    playable: boolean;
+    storage_size: number;
+    video_external_id: string;
 };

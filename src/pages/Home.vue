@@ -32,8 +32,8 @@
                 <FoldersVideosPage />
             </v-tabs-window-item>
   
-            <v-tabs-window-item value="allVideos">
-                <AllVideosPage ref="allVideos" :search="search" />
+            <v-tabs-window-item value="allVideos" height="100%">
+                <VideoScroll ref="allVideos" :search="search" />
             </v-tabs-window-item>
         </v-tabs-window>
     </v-container>
@@ -43,7 +43,7 @@
 import SearchBar from '@/components/SearchBar/SearchBar.vue';
 import FoldersVideosPage from '@/components/FoldersVideosPage/FoldersVideosPage.vue';
 import { ref, useTemplateRef } from 'vue';
-import AllVideosPage from '@/components/AllVideosPage/AllVideosPage.vue';
+import VideoScroll from '@/components/Videos/VideoScroll.vue';
 
 const search = ref<string>("");
 const tab = ref<string>("");
