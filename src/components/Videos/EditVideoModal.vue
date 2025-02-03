@@ -39,6 +39,7 @@
                         color="primary"
                         type="submit"
                         append-icon="mdi-pencil"
+                        :disabled="!videoDescription.title || !videoDescription.description"
                         :loading="loading"
                     >
                         Salvar

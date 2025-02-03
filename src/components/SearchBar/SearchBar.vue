@@ -7,6 +7,7 @@
         append-inner-icon="mdi-magnify"
         class="w-100"
         clearable
+        @keyup.enter="emit('search')"
         @click:append-inner="(emit('search'))"
     />
 </template>
