@@ -7,7 +7,7 @@ import axios, { AxiosError, type AxiosInstance, type AxiosResponse } from "axios
 
 function useHttp(): AxiosInstance {
     const api = axios.create({
-        baseURL: import.meta.env.VITE_PANDA_URL,
+        baseURL: 'https://api-v2.pandavideo.com.br/',
         headers: {
             accept: 'application/json',
             Authorization: localStorage.getItem("token"),
