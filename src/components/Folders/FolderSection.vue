@@ -19,7 +19,6 @@
                     <v-icon
                         :icon="expand ? 'mdi-chevron-up' : 'mdi-chevron-down'"
                         size="small"
-                        @click="expand = !expand"
                     />
                 </v-col>
             </v-row>

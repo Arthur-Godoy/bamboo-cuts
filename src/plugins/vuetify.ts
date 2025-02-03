@@ -23,7 +23,7 @@ const lightTheme = {
     dark: false,
     colors: {
         background: '#EEE',
-        surface: '#E7E7E7',
+        surface: '#E5E5E5',
         primary: '#55B948',
         secondary: '#747474',
         'surface-dark': "#979797",

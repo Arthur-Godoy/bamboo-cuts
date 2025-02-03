@@ -51,6 +51,6 @@ const allVideos = useTemplateRef("allVideos");
 
 function handleSearch() {
     tab.value = "allVideos";
-    allVideos.value?.getVideos();
+    allVideos.value?.search();
 }
 </script>

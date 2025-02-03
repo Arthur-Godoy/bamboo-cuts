@@ -66,20 +66,21 @@ const props = defineProps<{
 const videos = ref<Video[]>([]);
 const page = ref(1);
 const loading = ref(false);
+let resetInfiteScroll: ((value: 'ok' | 'empty' | 'error') => void) | undefined;
 
 const emit = defineEmits(['picked']);
 
-async function getVideos({done} = {}): Promise<void>
+async function getVideos({done}: {done: ((value: 'ok' | 'empty' | 'error') => void)} = {} as any): Promise<void>
 {
+    resetInfiteScroll = done;
     loading.value = true;
+
     let filters: VideoFilters = {
         page: page.value,
-        limit: 5,
+        limit: 10 ,
     }
 
     if (props.search) {
-        page.value = 1;
-
         filters = {
             ...filters,
             title: props.search
@@ -100,15 +101,21 @@ async function getVideos({done} = {}): Promise<void>
             ...videos.value,
             ...response.data.videos
         ];
-    
+
         if (page.value === response.data.pages) {
+            
+            done('empty');
+            return;
+        }
+
+        if (response.data.total === 0) {
+            videos.value = [];
             done('empty');
             return;
         }
 
         page.value += 1;
         done('ok');
-
     } catch (error) {
         done('empty');
     } finally {
@@ -116,7 +123,13 @@ async function getVideos({done} = {}): Promise<void>
     }
 }
 
+function search() {
+    page.value = 1;
+    videos.value = [];
+    if (resetInfiteScroll) resetInfiteScroll('ok');
+}
+
 defineExpose({
-    getVideos
+    search
 });
 </script>

@@ -1,4 +1,5 @@
 
+import router from "@/router";
 import useAuthStore, { type AuthStore } from "@/stores/auth";
 import type { MessageStore } from "@/stores/message";
 import useMessageStore from "@/stores/message";
@@ -21,6 +22,7 @@ function useHttp(): AxiosInstance {
             if (error.response?.status === 401) {
                 const authStore: AuthStore = useAuthStore();
                 authStore.unauthenticate();
+                router.push({ name: "Login" }); 
             } else {
                 console.log(error);
                 const messageStore: MessageStore = useMessageStore();
