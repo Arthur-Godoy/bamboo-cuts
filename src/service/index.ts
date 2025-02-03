@@ -26,8 +26,9 @@ function useHttp(): AxiosInstance {
             } else {
                 console.log(error);
                 const messageStore: MessageStore = useMessageStore();
+                const respData = error.response?.data as { errMsg: string };
                 messageStore.addMessage(
-                    error.response?.data?.errMsg ?? "Erro ao realizar a requisição",
+                    respData.errMsg ?? "Erro ao realizar a requisição",
                     "error"
                 );
             }
