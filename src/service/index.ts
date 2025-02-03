@@ -24,7 +24,6 @@ function useHttp(): AxiosInstance {
                 authStore.unauthenticate();
                 router.push({ name: "Login" }); 
             } else {
-                console.log(error);
                 const messageStore: MessageStore = useMessageStore();
                 const respData = error.response?.data as { errMsg: string };
                 messageStore.addMessage(

@@ -27,6 +27,8 @@ import type { Video } from '@/types/models/Video';
 import { onBeforeMount, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import AppLoading from '@/components/Loading/AppLoading.vue';
+import router from '@/router';
+import { AxiosError } from 'axios';
 
 const route = useRoute();
 const loading = ref<boolean>(false);
@@ -39,6 +41,12 @@ async function getVideoDetails(id: string): Promise<void>
         const response = await videoService.showVideo(id);
     
         video.value = response.data;
+    } catch (err: AxiosError | any ) {
+        const respData = err?.response?.data as { errMsg: string };
+
+        if (respData.errMsg && respData.errMsg.includes("video_id must match pattern")) {
+            router.push({ name: "NotFound" });
+        }; 
     } finally {
         loading.value = false;
     }

@@ -9,10 +9,10 @@
             style="max-width: 300px;"
         >
         <h1 class="text-lg-h1 text-h2 my-10">
-            Oops 😭
+            Oops...
         </h1>
-        <h2 class="text-lg-h2 text-h5">
-            Parece que a página que está procurando nao existe.
+        <h2 class="text-lg-h2 text-h5 px-1">
+            Parece que a página que você está procurando não existe.
         </h2>
         <v-btn
             color="primary"
