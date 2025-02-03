@@ -8,6 +8,11 @@
             indeterminate
             color="primary"
         />
+        <div class="text-center mt-10" v-if="folders.length === 0 && !loading">
+            <h1 class="text-h4 text-gray font-weight-bold">
+                Você ainda não tem nenhuma pasta.
+            </h1>
+        </div>
         <FolderSection
             v-for="folder in folders"
             :key="folder.id"
@@ -32,11 +37,14 @@ const folders = ref<Folder[]>([]);
 const loading = ref<boolean>(true);
 
 async function getFolders() {
-    loading.value = true;
-    const response = await folderService.getFolders();
-
-    folders.value = response.data.folders;
-    loading.value = false;
+    try {
+        loading.value = true;
+        const response = await folderService.getFolders();
+    
+        folders.value = response.data.folders;
+    } finally {
+        loading.value = false;
+    }
 }
 
 onBeforeMount(() => {
