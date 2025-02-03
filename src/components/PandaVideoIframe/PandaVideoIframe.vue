@@ -7,7 +7,6 @@
             :height="height"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
-            @resize="console.log('resize')"
             ref="iframe"
         ></iframe>
     </v-responsive>
