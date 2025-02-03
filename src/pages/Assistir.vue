@@ -44,7 +44,6 @@ async function getVideoDetails(id: string): Promise<void>
     }
 }
 
-
 onBeforeMount(() => {
     getVideoDetails(route.params.id as string);	
 });

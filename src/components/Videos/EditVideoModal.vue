@@ -85,6 +85,7 @@ async function handleEdit() {
 
         await videoService.editDescription(props.id, videoDescription)
         emit('edited', props.id);
+        messageStore.addMessage("Vídeo editado com sucesso", "success");
         openEditVideoModal.value = false;
     } finally {
         loading.value = false;
