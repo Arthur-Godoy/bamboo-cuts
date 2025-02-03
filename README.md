@@ -1,12 +1,11 @@
-## 💿 Install
+## Rodando o projeto localmente com Yarn
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
+Para rodar o projeto localmente, execute os seguintes comandos:
 
-| Package Manager | Command        |
-| --------------- | -------------- |
-| [yarn]          | `yarn install` |
-| [npm]           | `npm install`  |
-| [pnpm]          | `pnpm install` |
-| [bun]           | `bun install`  |
+1. Clone o repositório
+2. Entre na pasta do projeto: `cd bamboo-cuts`
+3. Instale as dependências: `yarn install`
+4. Rode o projeto: `yarn dev`
+5. Abra o navegador e acesse: `http://localhost:3000` (o link é retornado após rodar o yarn dev)
 
-After completing the installation, your environment is ready for Vuetify development.
+Pronto! O projeto estará rodando localmente.
